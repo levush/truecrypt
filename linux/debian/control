@@ -1,0 +1,22 @@
+Source: truecrypt
+Section: non-free/utils
+Priority: optional
+Maintainer: Francis Russell <francis@unchartedbackwaters.co.uk>
+Build-Depends: debhelper (>= 7), pkg-config, quilt (>= 0.46-7), libwxgtk2.8-dev,
+ libfuse-dev, libopencryptoki-dev, nasm (>= 2.08.01) [any-i386 any-amd64]
+Standards-Version: 3.9.2
+Homepage: http://www.truecrypt.org/
+
+Package: truecrypt
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, mount (>=2.12r-4),
+ e2fsprogs(>=1.38-2), module-init-tools, dmsetup, sudo, dosfstools, xterm
+Recommends: nautilus | dolphin | konqueror
+Description: Cross-platform on-the-fly encryption
+ TrueCrypt provides cross-platform on-the-fly encryption for Linux, MacOS X and
+ Windows. It can encrypt filesystems stored either within a file or on disk
+ partitions. Supported encryption algorithms include AES, Serpent and Twofish.
+ The current version uses the XTS mode of disk encryption. In addition,
+ TrueCrypt supports "hidden volumes" - unidentifiable volumes present in the
+ free-space of a TrueCrypt volume. NOTE: This is an unofficial packaging 
+ unrelated to either Debian or TrueCrypt.

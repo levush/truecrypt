@@ -1,0 +1,63 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+DEB_HOST_GNU_CPU ?= $(shell dpkg-architecture -qDEB_HOST_GNU_CPU)
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+	dh_quilt_patch
+	$(MAKE) ARCH=$(DEB_HOST_GNU_CPU)
+	touch $@
+
+clean:
+	dh_testdir
+	rm -f build-stamp
+	$(MAKE) clean
+	dh_quilt_unpatch
+	dh_clean
+
+install:  build 
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installchangelogs
+	install -m 644 -D "Release/Setup Files/TrueCrypt User Guide.pdf" debian/tmp/usr/share/doc/truecrypt/user_guide.pdf
+	dh_installdocs
+	install -m 644 -D "Resources/Icons/TrueCrypt-48x48.xpm" debian/tmp/usr/share/pixmaps/truecrypt.xpm
+	dh_install
+	dh_installmenu
+	dh_installinit --no-start -- stop 10 0 1 6 .
+	dh_installman
+
+patch:
+	dh_quilt_patch
+
+unpatch:
+	dh_quilt_unpatch
+
+binary: binary-indep binary-arch
+
+binary-indep: install
+
+binary-arch: install
+	dh_testdir
+	dh_testroot
+	dh_strip
+	dh_shlibdeps
+	dh_compress --exclude=.pdf
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+.PHONY:	build clean install binary binary-indep binary-arch patch unpatch

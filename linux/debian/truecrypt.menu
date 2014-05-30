@@ -1,0 +1,7 @@
+?package(truecrypt):\
+  needs="X11"\
+  section="Applications/System/Security"\
+  title="TrueCrypt"\
+  longtitle="Create and mount TrueCrypt encrypted volumes"\
+  command="/usr/bin/truecrypt"\
+  icon="/usr/share/pixmaps/truecrypt.xpm"

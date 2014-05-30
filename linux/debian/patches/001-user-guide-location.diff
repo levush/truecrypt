@@ -1,0 +1,13 @@
+Index: truecrypt-7.1a-source/Main/GraphicUserInterface.cpp
+===================================================================
+--- truecrypt-7.1a-source.orig/Main/GraphicUserInterface.cpp	2013-01-13 23:15:11.109850819 +0000
++++ truecrypt-7.1a-source/Main/GraphicUserInterface.cpp	2013-01-13 23:15:25.184237643 +0000
+@@ -1085,7 +1085,7 @@
+ #elif defined (TC_MACOSX)
+ 			docPath += L"/../Resources/TrueCrypt User Guide.pdf";
+ #elif defined (TC_UNIX)
+-			docPath = L"/usr/share/truecrypt/doc/TrueCrypt User Guide.pdf";
++			docPath = L"/usr/share/doc/truecrypt/user_guide.pdf";
+ #else
+ #	error TC_RESOURCE_DIR undefined
+ #endif

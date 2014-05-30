@@ -1,0 +1,102 @@
+truecrypt (7.1a-1kali2) kali; urgency=low
+
+  * Fixed moar build error
+
+ -- Mati Aharoni <muts@kali.org>  Sat, 02 Feb 2013 17:22:44 -0500
+
+truecrypt (7.1a-1kali1) kali; urgency=low
+
+  * Fixed build error
+
+ -- Mati Aharoni <muts@kali.org>  Sat, 02 Feb 2013 17:14:01 -0500
+
+truecrypt (7.1a-1kali0) kali; urgency=low
+
+  * Kali import
+
+ -- Mati Aharoni <muts@kali.org>  Sat, 02 Feb 2013 16:43:22 -0500
+
+truecrypt (7.1a-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update copyright on generated man page.
+  * Switch to Debian compatibility level 9.
+  * Refresh debian/patches/001-user-guide-location.diff.
+  * Add debian/patches/002-build-flags.diff to patch TrueCrypt makefile to
+    include build hardening options.
+
+ -- Francis Russell <francis@unchartedbackwaters.co.uk>  Sun, 18 Dec 2011 14:20:52 +0000
+
+truecrypt (7.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update copyrights. 
+  * Update standards to version 3.9.2 (no changes required). 
+
+ -- Francis Russell <francis@unchartedbackwaters.co.uk>  Sun, 18 Dec 2011 14:05:10 +0000
+
+truecrypt (7.0a-1) unstable; urgency=low
+
+  * New upstream release. 
+  * Minor improvements to README.source. 
+
+ -- Francis Russell <francis@unchartedbackwaters.co.uk>  Sat, 18 Sep 2010 18:53:49 +0100
+
+truecrypt (7.0-3) UNRELEASED; urgency=low
+
+  * Only require nasm on i386 or amd64 architectures.
+
+ -- Francis Russell <francis@unchartedbackwaters.co.uk>  Fri, 27 Aug 2010 16:25:04 +0100
+
+truecrypt (7.0-2) unstable; urgency=low
+
+  * Add versioned nasm dependency (thx Joe Gooch).
+  * Depend on a version of quilt that includes the dh_quilt_patch and
+    dh_quilt_unpatch scripts (thx Joe Gooch). 
+  * Use dpkg-architecture to determine host architecture which is sometimes
+    problematic in chroot configurations (thx Joe Gooch). 
+  * Update to standards version 3.9.1 (no changes). 
+
+ -- Francis Russell <francis@unchartedbackwaters.co.uk>  Wed, 25 Aug 2010 18:22:01 +0100
+
+truecrypt (7.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Refresh user-guide location patch. 
+  * Fix grammar error in README.Debian spotted by Lintian. 
+  * Stop truecrypt service at runlevel 1 as well as killprocs would do it
+    anyway. Fixes Lintian warning.
+  * Update truecrypt init script to require $remote_fs instead of umountroot for
+    Required-Stop. Fixes Lintian error.
+  * Update licensing. 
+  * Update to standards version 3.9.0 (no changes). 
+
+ -- Francis Russell <francis@unchartedbackwaters.co.uk>  Tue, 20 Jul 2010 22:55:47 +0100
+
+truecrypt (6.3a-1) unstable; urgency=low
+
+  * Bump version to 6.3a.
+  * Source files now use Unix line-endings. Update patches to match.
+
+ -- Francis Russell <francis@unchartedbackwaters.co.uk>  Tue, 24 Nov 2009 20:05:38 +0000
+
+truecrypt (6.3-3) unstable; urgency=low
+
+  * Make man page generator handle examples more nicely.
+  * Add in more TrueCrypt package dependencies.
+
+ -- Francis Russell <francis@unchartedbackwaters.co.uk>  Tue, 10 Nov 2009 23:42:47 +0000
+
+truecrypt (6.3-2) unstable; urgency=low
+
+  * Add a Perl script to automatically generate a manpage from 'truecrypt
+    --help'. As the help output is embedded in the TrueCrypt source, the manpage
+    can't be distributed directly.
+
+ -- Francis Russell <francis@unchartedbackwaters.co.uk>  Mon, 09 Nov 2009 18:50:59 +0000
+
+truecrypt (6.3-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Francis Russell <francis@unchartedbackwaters.co.uk>  Sat, 07 Nov 2009 20:34:07 +0000

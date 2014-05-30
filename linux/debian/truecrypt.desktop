@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=TrueCrypt
+GenericName=TrueCrypt volume manager
+Comment=Create and mount TrueCrypt encrypted volumes
+Icon=/usr/share/pixmaps/truecrypt.xpm
+Exec=/usr/bin/truecrypt
+Categories=Security;Utility;Filesystem
+Terminal=false

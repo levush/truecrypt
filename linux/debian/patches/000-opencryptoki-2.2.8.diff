@@ -1,0 +1,47 @@
+diff -ur truecrypt-6.3.old/Common/SecurityToken.cpp truecrypt-6.3/Common/SecurityToken.cpp
+--- truecrypt-6.3.old/Common/SecurityToken.cpp	2009-11-08 01:24:41.000000000 +0000
++++ truecrypt-6.3/Common/SecurityToken.cpp	2009-11-08 01:29:30.000000000 +0000
+@@ -657,9 +657,15 @@
+ 			TC_TOKEN_ERR (CKR_CRYPTOKI_ALREADY_INITIALIZED)
+ 			TC_TOKEN_ERR (CKR_MUTEX_BAD)
+ 			TC_TOKEN_ERR (CKR_MUTEX_NOT_LOCKED)
++
++                        /*
++			These error codes do not exist in PKCS#11 v2.11.
++			Removing them simply causes the error description strings to be returned as hex.
++
+ 			TC_TOKEN_ERR (CKR_NEW_PIN_MODE)
+ 			TC_TOKEN_ERR (CKR_NEXT_OTP)
+ 			TC_TOKEN_ERR (CKR_FUNCTION_REJECTED)
++			*/
+ 
+ #undef		TC_TOKEN_ERR
+ 		};
+diff -ur truecrypt-6.3.old/Common/SecurityToken.h truecrypt-6.3/Common/SecurityToken.h
+--- truecrypt-6.3.old/Common/SecurityToken.h	2009-11-08 01:24:41.000000000 +0000
++++ truecrypt-6.3/Common/SecurityToken.h	2009-11-08 01:27:01.000000000 +0000
+@@ -19,6 +19,15 @@
+ #ifndef NULL_PTR
+ #	define NULL_PTR 0
+ #endif
++
++#ifndef CK_TRUE
++#	define CK_TRUE TRUE
++#endif
++
++#ifndef CK_FALSE
++#	define CK_FALSE FALSE
++#endif
++
+ #define CK_PTR *
+ #define CK_CALLBACK_FUNCTION(RET_TYPE, NAME) RET_TYPE (* NAME)
+ 
+@@ -40,7 +49,7 @@
+ #	define CK_DECLARE_FUNCTION(RET_TYPE, NAME) RET_TYPE NAME
+ #	define CK_DECLARE_FUNCTION_POINTER(RET_TYPE, NAME) RET_TYPE (* NAME)
+ 
+-#	include <pkcs11.h>
++#	include <opencryptoki/pkcs11.h>
+ 
+ #endif // !TC_WINDOWS
+ 

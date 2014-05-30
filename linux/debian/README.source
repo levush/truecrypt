@@ -1,0 +1,27 @@
+If you're trying to build a package from source, you're probably familiar with
+this but here are some instructions anyway.
+
+The following steps assume you're using packaging version 7.1a-1. Replace with
+the current version where appropriate.
+
+- Download and verify the PGP signature on the sources (if you're paranoid): 
+- Untar them: 
+
+  tar -zxf "TrueCrypt 7.1a Source.tar.gz"
+
+- Copy in the 'debian' folder: 
+
+  cp -r truecrypt_packaging-7.1a-1/debian truecrypt-7.1a-source
+
+- Enter the TrueCrypt sources folder:
+
+  cd truecrypt-7.1a-source
+
+- Check build dependencies:
+
+  dpkg-checkbuilddeps
+
+- Install any missing build dependencies.
+- Build the package:
+
+  dpkg-buildpackage -B

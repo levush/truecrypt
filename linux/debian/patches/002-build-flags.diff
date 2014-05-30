@@ -1,0 +1,16 @@
+Index: truecrypt-7.1a-source/Makefile
+===================================================================
+--- truecrypt-7.1a-source.orig/Makefile	2012-02-07 10:36:48.000000000 +0000
++++ truecrypt-7.1a-source/Makefile	2013-01-13 23:19:51.593631914 +0000
+@@ -50,6 +50,11 @@
+ export WXCONFIG_CXXFLAGS :=
+ WX_ROOT ?= ..
+ 
++CPPFLAGS+=$(shell dpkg-buildflags --get CPPFLAGS)
++CFLAGS+=$(shell dpkg-buildflags --get CFLAGS) $(CPPFLAGS)
++CXXFLAGS+=$(shell dpkg-buildflags --get CXXFLAGS) $(CPPFLAGS)
++LFLAGS+=$(shell dpkg-buildflags --get LDFLAGS)
++
+ 
+ export TC_BUILD_CONFIG := Release
+ 

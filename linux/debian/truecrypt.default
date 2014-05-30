@@ -1,0 +1,6 @@
+# If enabled, the following option calls 'truecrypt -d' at shutdown. Although
+# all filesystems are unmounted automatically at shutdown, only calling
+# 'truecrypt -d' will stop the TrueCrypt processes and remove any device mappings.
+# It probably isn't necessary to do this, but it shouldn't hurt.
+
+TRUECRYPT_SHUTDOWN_UNMOUNT="yes"
