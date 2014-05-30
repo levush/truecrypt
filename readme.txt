@@ -3,7 +3,7 @@ B"H
 It feels to me that truecrypt has been taken over by the dark side.
 In order to bless the world with the old, hopefully untainted sources
 I started this repository to encourage you to further develop truecrypt.
-Most important action item will be to insure that the core here is 
+Most important action item will be to insure that the code here is 
 authentic. I guess it is, but I am not sure.
 
 Also at least the windows version needs a screen keyboard to type the 
